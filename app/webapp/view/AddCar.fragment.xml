@@ -1,0 +1,69 @@
+<core:FragmentDefinition
+    xmlns:core="sap.ui.core"
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:sap.ui.layout="sap.ui.layout"
+    xmlns:html="http://www.w3.org/1999/xhtml"
+    xmlns:form="sap.ui.layout.form"
+    xmlns:l="sap.ui.layout"
+>
+    <Dialog
+        id="OpenDialog"
+        title="Create Sales Order"
+    >
+        <form:SimpleForm
+            editable="true"
+            layout="ResponsiveGridLayout"
+        >
+            <form:content>
+                <Label
+                    text="Model"
+                    required="true"
+                />
+                <Input
+                    id="idName"
+                />
+                <Label text="Member Name" />
+                <ComboBox
+                    id="idMember"
+                    items="{
+                        path: 'Backend>/Member', 
+                        templateShareable: true
+                    }"
+                >
+                <core:Item key="{Backend>ID}" text="{Backend>name}" />
+                </ComboBox>
+                <Label text="Status" />
+                 <ComboBox
+                    id="idStatus"
+                    items="{
+                        path: 'Backend>/Status', 
+                        templateShareable: true
+                    }"
+                >
+                <core:Item key="{Backend>code}" text="{Backend>descr}" />
+                </ComboBox>
+                <Label text="Price" />
+                <Input
+                    id="idPrice"
+                    type="Number"
+                    
+                />
+            </form:content>
+        </form:SimpleForm>
+        <buttons>
+            <Button
+                id="confirmCreate"
+                text="Create"
+                press=".onCreate"
+                type="Emphasized"
+            />
+            <Button
+                id="cancelCreate"
+                text="Cancel"
+                press="onCancelDialog"
+                type="Transparent"
+            />
+        </buttons>
+    </Dialog>
+</core:FragmentDefinition>

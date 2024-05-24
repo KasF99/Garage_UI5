@@ -1,0 +1,77 @@
+<mvc:View
+    controllerName="ui5.walkthrough.controller.Detail"
+    xmlns:l="sap.ui.layout"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+>
+    <Page
+        title="Detail Page"
+        showNavButton="true"
+        navButtonPress=".onNavBack"
+    >
+        <ObjectHeader
+            intro="{Backend>name}"
+            title="{Backend>Member/firstName} {Backend>Member/lastName}"
+            number="{Backend>price}"
+            numberUnit="USD"
+            numberState="Success"
+        >
+            <attributes>
+                <!-- <ObjectAttribute
+                    title="Status"
+                    text="{Backend>status}"
+                /> -->
+                <ObjectAttribute
+                    title="Email"
+                    text="{Backend>Member/email}"
+                />
+                <ObjectAttribute
+                    title="Phone"
+                    text="{Backend>Member/phone}"
+                />
+            </attributes>
+            <statuses>
+                <ObjectStatus
+                    title="Member ID"
+                    text="{Backend>Member_ID}"
+                    state="Success"
+                />
+            </statuses>
+        </ObjectHeader>
+        <Image
+            src="{Backend>image}"
+            width="100%"
+            class="sapUiSmallMarginTopBottom"
+        />
+        <Panel
+            headerText="Car Details"
+            class="sapUiResponsiveMargin"
+            width="auto"
+        >
+        <l:VerticalLayout class="sapUiContentPadding">
+		 <Label text="Car Name" design="Bold" />
+                <Text text="{Backend>name}" />
+                <Label text="Car Price" design="Bold" />
+                <Text text="{Backend>price}" />
+                <!-- <Label text="Car Status" design="Bold" />
+                <Text text="{Backend>status}" /> -->
+	</l:VerticalLayout>
+        </Panel>
+        <Panel
+            headerText="Member Details"
+            class="sapUiResponsiveMargin"
+            width="auto"
+        >
+          <l:VerticalLayout class="sapUiContentPadding">
+                <Label text="First Name" design="Bold" />
+                <Text text="{Backend>Member/firstName}" />
+                <Label text="Last Name" design="Bold" />
+                <Text text="{Backend>Member/lastName}" />
+                <Label text="Email" design="Bold" />
+                <Text text="{Backend>Member/email}" />
+                <Label text="Phone" design="Bold" />
+                <Text text="{Backend>Member/phone}" />
+            </l:VerticalLayout>
+        </Panel>
+    </Page>
+</mvc:View>

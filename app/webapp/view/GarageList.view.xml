@@ -1,0 +1,107 @@
+<mvc:View
+    controllerName="ui5.walkthrough.controller.GarageList"
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc"
+>
+    <Table
+        id="garageList"
+        headerText="Garage List"
+        class="sapUiResponsiveMargin"
+        width="auto"
+        items="{
+            path : 'Backend>/Cars',
+            sorter : {
+                path : 'name',
+                group : true
+            }
+
+        }"
+        mode="SingleSelectLeft"
+    >
+        <headerToolbar>
+            <Toolbar>
+                <Title text="Cars" />
+                <ToolbarSpacer />
+                <SearchField
+                    width="50%"
+                    search=".onFilterCars"
+                />
+                <Button
+											id="addButton"
+											icon="sap-icon://add"
+											
+											press=".onOpenDialog">
+											<layoutData>
+												<OverflowToolbarLayoutData priority="NeverOverflow"/>
+											</layoutData>
+										</Button>
+										<Button
+											id="deleteButton"
+											icon="sap-icon://delete"
+											press=".onDelete">
+											<layoutData>
+												<OverflowToolbarLayoutData priority="NeverOverflow"/>
+											</layoutData>
+										</Button>
+                                        	<Button
+											id="editButton"
+											icon="sap-icon://edit"
+											press=".onEdit">
+											<layoutData>
+												<OverflowToolbarLayoutData priority="NeverOverflow"/>
+											</layoutData>
+										</Button>
+            </Toolbar>
+        </headerToolbar>
+        <columns>
+            <Column>
+                <Text text="Car Model" />
+            </Column>
+            <Column>
+                <Text text="ID" />
+            </Column>
+             <Column>
+                <Text text="Owner Name" />
+            </Column>
+               
+            <Column hAlign="End">
+                <Text text="Price" />
+            </Column>
+        </columns>
+        <items>
+            <ColumnListItem
+                type="Navigation"
+                press=".onListItemPress"
+            >
+                <cells>
+                    <ObjectNumber
+                        number="{Backend>name}"
+                        emphasized="false"
+                    />
+                    <Text
+                        text="{
+                            path: 'Backend>ID'
+                        }"
+                    />
+                     <Text
+                        text="{
+                            path: 'Backend>Member/name'
+                        }"
+                    />
+
+                
+                    <ObjectNumber    number="{
+                            parts: [
+                                'Backend>price', 'view>currency'
+                        ],
+                            type: 'sap.ui.model.type.Currency',
+                            formatOptions: {
+                            showMeasure: false  }}"
+                            unit="{view>/currency}"
+                            state="{path: 'Backend>status_code', formatter: '.cformatter.status'}">
+                    </ObjectNumber>
+                </cells>
+            </ColumnListItem>
+        </items>
+    </Table>
+</mvc:View>
