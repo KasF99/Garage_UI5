@@ -22,12 +22,19 @@ sap.ui.define([
 			const oHistory = History.getInstance();
 			const sPreviousHash = oHistory.getPreviousHash();
 
+			
 			if (sPreviousHash !== undefined) {
 				window.history.go(-1);
 			} else {
 				const oRouter = this.getOwnerComponent().getRouter();
 				oRouter.navTo("overview", {}, true);
-			}
-		}
+		}},
+
+		onEditPress() {
+            const oRouter = this.getOwnerComponent().getRouter();
+            const sPath = this.getView().getBindingContext("Backend").getPath().substr(1);
+
+            oRouter.navTo("edit", { carPath: encodeURIComponent(sPath) });
+        }
 	});
 });

@@ -9,6 +9,9 @@
         showNavButton="true"
         navButtonPress=".onNavBack"
     >
+    <headerContent>
+        <Button text="Edit" press=".onEditPress"></Button>
+    </headerContent>
         <ObjectHeader
             intro="{Backend>name}"
             title="{Backend>Member/firstName} {Backend>Member/lastName}"
@@ -17,10 +20,6 @@
             numberState="Success"
         >
             <attributes>
-                <!-- <ObjectAttribute
-                    title="Status"
-                    text="{Backend>status}"
-                /> -->
                 <ObjectAttribute
                     title="Email"
                     text="{Backend>Member/email}"
@@ -53,8 +52,6 @@
                 <Text text="{Backend>name}" />
                 <Label text="Car Price" design="Bold" />
                 <Text text="{Backend>price}" />
-                <!-- <Label text="Car Status" design="Bold" />
-                <Text text="{Backend>status}" /> -->
 	</l:VerticalLayout>
         </Panel>
         <Panel

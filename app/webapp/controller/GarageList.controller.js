@@ -28,8 +28,6 @@ sap.ui.define([
 			})
 		},
 
-
-
 		onFilterCars(oEvent) {
 			// build filter array
 			const aFilter = [];
@@ -42,30 +40,6 @@ sap.ui.define([
 			const oList = this.byId("garageList");
 			const oBinding = oList.getBinding("items");
 			oBinding.filter(aFilter);
-		},
-
-		onCreateRel: function () {
-
-
-			var oContext = this.getView().byId("garageList").getBinding("items")
-				.create({
-					name: "TEST FRONT",
-					Member: {
-						name: "New Owner"
-					},
-					price: 20000
-				})
-
-			// Note: This promise fails only if the transient entity is canceled, 
-			//   i.e. deleted by either deleting the transient context or by resetting pending changes
-			oContext.created().then(function () {
-				// Sales order successfully created, refresh the list
-			}.bind(this), function (oError) {
-				// handle rejection of entity creation; if oError.canceled === true then the transient entity has been deleted
-				if (!oError.canceled) {
-					throw oError; // unexpected error
-				}
-			}.bind(this));
 		},
 
 		onCreate: function () {

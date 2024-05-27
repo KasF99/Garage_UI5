@@ -96,7 +96,12 @@
 				"pattern": "detail/{carPath}",
 				"name": "detail",
 				"target": "detail"
-			  }
+			  },
+			  {
+				"pattern": "edit/{carPath}",
+				"name": "edit",
+				"target": "edit"
+			}
 			],
 			"targets": {
 			  "overview": {
@@ -106,6 +111,10 @@
 			  "detail": {
 				"id": "detail",
 				"name": "Detail"
+			  },
+			  "edit": {
+				"id": "edit",
+				"name": "Edit"
 			  }
 			}
 		  },
