@@ -15,7 +15,8 @@
                     <Label text="Car Name" design="Bold" />
                     <Input id="nameInput" value="{Backend>name}" />
                     <Label text="Car Price" design="Bold" />
-                    <Input id="priceInput" value="{Backend>price}" />
+                    <!-- <Input id="priceInput" value="{Backend>price}" /> -->
+                    <Input id="priceInput" value="{path: 'Backend>price', formatter: '.formatter.formatPrice'}" />
                 </l:VerticalLayout>
             </Panel>
             <Panel headerText="Member Details" class="sapUiResponsiveMargin" width="auto">

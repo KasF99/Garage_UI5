@@ -14,7 +14,6 @@
                 path : 'name',
                 group : true
             }
-
         }"
         mode="SingleSelectLeft"
     >
@@ -46,7 +45,7 @@
                                         	<Button
 											id="editButton"
 											icon="sap-icon://edit"
-											press=".onEdit">
+											press=".refreshCars">
 											<layoutData>
 												<OverflowToolbarLayoutData priority="NeverOverflow"/>
 											</layoutData>

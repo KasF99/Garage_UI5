@@ -18,7 +18,15 @@ sap.ui.define([
 				currency: "EUR"
 			});
 			this.getView().setModel(oViewModel, "view");
+
+			const oRouter = this.getOwnerComponent().getRouter();
+            oRouter.getRoute("overview").attachPatternMatched(this.onPatternMatched, this);
+
 		},
+
+		onPatternMatched: function () {
+            this.refreshCars();
+        },
 
 		onListItemPress: function (oEvent) {
 			const oItem = oEvent.getSource();
@@ -83,6 +91,12 @@ sap.ui.define([
 
 			this.oDialog.open();
 		},
+
+		refreshCars: function () {
+            const oList = this.byId("garageList");
+            const oBinding = oList.getBinding("items");
+            oBinding.refresh();
+        },
 
 		onDelete: function () {
 			var oContext,
