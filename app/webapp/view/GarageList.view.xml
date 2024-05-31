@@ -42,14 +42,6 @@
 												<OverflowToolbarLayoutData priority="NeverOverflow"/>
 											</layoutData>
 										</Button>
-                                        	<Button
-											id="editButton"
-											icon="sap-icon://edit"
-											press=".refreshCars">
-											<layoutData>
-												<OverflowToolbarLayoutData priority="NeverOverflow"/>
-											</layoutData>
-										</Button>
             </Toolbar>
         </headerToolbar>
         <columns>

@@ -15,7 +15,7 @@ sap.ui.define([
 		cformatter: Formatter_color,
 		onInit() {
 			const oViewModel = new JSONModel({
-				currency: "EUR"
+				currency: "USD"
 			});
 			this.getView().setModel(oViewModel, "view");
 

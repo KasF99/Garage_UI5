@@ -9,9 +9,17 @@
         showNavButton="true"
         navButtonPress=".onNavBack"
     >
-    <headerContent>
-        <Button text="Edit" press=".onEditPress"></Button>
-    </headerContent>
+        <headerContent>
+            <Button
+                id="editButton"
+                icon="sap-icon://edit"
+                press=".onEditPress"
+            >
+                <layoutData>
+                    <OverflowToolbarLayoutData priority="NeverOverflow" />
+                </layoutData>
+            </Button>
+        </headerContent>
         <ObjectHeader
             intro="{Backend>name}"
             title="{Backend>Member/firstName} {Backend>Member/lastName}"
@@ -47,26 +55,44 @@
             class="sapUiResponsiveMargin"
             width="auto"
         >
-        <l:VerticalLayout class="sapUiContentPadding">
-		 <Label text="Car Name" design="Bold" />
+            <l:VerticalLayout class="sapUiContentPadding">
+                <Label
+                    text="Car Name"
+                    design="Bold"
+                />
                 <Text text="{Backend>name}" />
-                <Label text="Car Price" design="Bold" />
+                <Label
+                    text="Car Price"
+                    design="Bold"
+                />
                 <Text text="{Backend>price}" />
-	</l:VerticalLayout>
+            </l:VerticalLayout>
         </Panel>
         <Panel
             headerText="Member Details"
             class="sapUiResponsiveMargin"
             width="auto"
         >
-          <l:VerticalLayout class="sapUiContentPadding">
-                <Label text="First Name" design="Bold" />
+            <l:VerticalLayout class="sapUiContentPadding">
+                <Label
+                    text="First Name"
+                    design="Bold"
+                />
                 <Text text="{Backend>Member/firstName}" />
-                <Label text="Last Name" design="Bold" />
+                <Label
+                    text="Last Name"
+                    design="Bold"
+                />
                 <Text text="{Backend>Member/lastName}" />
-                <Label text="Email" design="Bold" />
+                <Label
+                    text="Email"
+                    design="Bold"
+                />
                 <Text text="{Backend>Member/email}" />
-                <Label text="Phone" design="Bold" />
+                <Label
+                    text="Phone"
+                    design="Bold"
+                />
                 <Text text="{Backend>Member/phone}" />
             </l:VerticalLayout>
         </Panel>
